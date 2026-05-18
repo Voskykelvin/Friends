@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thanksgiving Day Out — June 28th</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #fbf4e8;
+    --gold: #d8b85e;
+    --gold-light: #f0d37f;
+    --gold-pale: #f7e7bc;
+    --gold-soft: #fff7e6;
+    --gold-cream: #fff9f0;
+    --mustard: #c89408;
+    --mustard-dark: #865c05;
+    --mustard-mid: #a8790e;
+    --honey: #e0ac15;
+    --amber: #d98f06;
+    --amber-pale: #fff2d5;
+    --text-dark: #2a1f08;
+    --text-mid: #4f3f23;
+    --text-muted: #7d6b49;
+    --white: #ffffff;
+    --border: rgba(216, 184, 94, 0.22);
+    --border-strong: rgba(134, 92, 5, 0.35);
+    --rust: #96502a;
+    --rust-pale: #f8ede2;
+    --earth: #5b482f;
+    --earth-pale: #f6efe7;
+    --sage: #6d845d;
+    --sage-pale: #eef2e8;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Georgia', serif; background: var(--bg); color: var(--text-dark); line-height: 1.7; }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(145deg, rgba(92, 57, 16, 0.84) 0%, rgba(210, 170, 84, 0.76) 42%, rgba(242, 211, 114, 0.62) 100%),
+                url('https://images.pexels.com/photos/36463969/pexels-photo-36463969.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    padding: 7rem 2rem 6rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.2) 0%, transparent 55%),
+                radial-gradient(circle at 80% 70%, rgba(61,46,10,0.2) 0%, transparent 55%);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.6);
+    color: #ffffff;
+    font-family: sans-serif; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+    padding: 7px 20px; border-radius: 22px; margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    color: #ffffff; font-weight: normal; line-height: 1.15; margin-bottom: 0.6rem;
+    position: relative;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  }
+
+  .hero h1 em {
+    color: #ffffff;
+    font-style: normal;
+    text-shadow: 0 0 40px rgba(255,255,255,0.5);
+    border-bottom: 3px solid rgba(255,255,255,0.55);
+    padding-bottom: 2px;
+  }
+
+  .hero-sub {
+    font-family: sans-serif; color: rgba(255,255,255,0.95);
+    font-size: 1rem; margin-bottom: 2rem; position: relative;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+  }
+
+  .hero-pills { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.6rem; position: relative; }
+
+  .hero-pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.5);
+    color: #ffffff;
+    font-family: sans-serif; font-size: 13px;
+    padding: 8px 18px; border-radius: 26px;
+    backdrop-filter: blur(5px);
+  }
+
+  .hero-pill-label {
+    font-size: 10px; letter-spacing: 1px; text-transform: uppercase;
+    opacity: 0.85; margin-right: 2px;
+  }
+
+  /* ── VERSE BANNER ── */
+  .verse-banner {
+    background: var(--gold-soft);
+    border-bottom: 1px solid var(--border-strong);
+    padding: 2.8rem 2rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .verse-mark {
+    width: 28px; height: 28px; margin: 0 auto 0.8rem;
+    border: 2px solid var(--mustard-mid);
+    border-radius: 4px;
+    opacity: 0.5;
+    position: relative;
+  }
+
+  .verse-mark::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 2px; height: 18px;
+    background: var(--mustard-mid);
+    transform: translate(-50%, -50%);
+  }
+
+  .verse-text {
+    font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+    color: var(--text-mid);
+    font-style: italic;
+    max-width: 620px;
+    margin: 0 auto 0.7rem;
+    line-height: 1.75;
+  }
+
+  .verse-ref {
+    font-family: sans-serif; font-size: 11px;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--mustard-dark);
+    display: inline-block;
+    padding: 4px 14px;
+    background: rgba(201, 162, 39, 0.15);
+    border-radius: 20px;
+    border: 1px solid var(--border-strong);
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: rgba(255,255,250,0.96);
+    border-bottom: 2px solid var(--gold-pale);
+    position: sticky; top: 0; z-index: 100;
+    display: flex; justify-content: center; overflow-x: auto;
+    box-shadow: 0 4px 18px rgba(134, 92, 5, 0.12);
+  }
+
+  nav a {
+    display: block; padding: 1rem 1.2rem;
+    font-family: sans-serif; font-size: 12px; letter-spacing: 0.5px;
+    color: var(--text-muted); text-decoration: none; white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  nav a:hover { color: var(--mustard-dark); border-bottom-color: var(--gold); }
+  
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.52);
+    color: #ffffff;
+    font-family: sans-serif; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+    padding: 7px 20px; border-radius: 22px; margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  .hero-pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.45);
+    color: #ffffff;
+    font-family: sans-serif; font-size: 13px;
+    padding: 8px 18px; border-radius: 26px;
+    backdrop-filter: blur(5px);
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 4rem 1rem; }
+  .container { max-width: 860px; margin: 0 auto; }
+
+  .section-label {
+    font-family: sans-serif; font-size: 10px;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--mustard-mid); margin-bottom: 0.3rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: normal; color: var(--text-dark); margin-bottom: 0.5rem;
+  }
+
+  .section-intro {
+    font-family: sans-serif; color: var(--text-muted);
+    font-size: 0.9rem; margin-bottom: 2rem; max-width: 540px;
+  }
+
+  /* ── GALLERY ── */
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .gallery-item {
+    border-radius: 18px; overflow: hidden;
+    position: relative; aspect-ratio: 4/3;
+    border: 1px solid rgba(217, 184, 94, 0.35);
+    box-shadow: 0 18px 50px rgba(79, 63, 31, 0.08);
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: blur(4px);
+  }
+
+  .gallery-item img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+    transition: transform 0.5s ease, filter 0.5s ease;
+  }
+
+  .gallery-item:hover img { transform: scale(1.06); filter: saturate(1.08); }
+
+  .gallery-caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 1.4rem 1rem 0.8rem;
+    font-family: sans-serif; font-size: 12px;
+    color: rgba(255,255,255,0.95); letter-spacing: 0.5px;
+    background: linear-gradient(180deg, rgba(20, 16, 10, 0.22) 0%, rgba(26, 18, 8, 0.45) 32%, rgba(38, 28, 12, 0.78) 100%);
+    backdrop-filter: blur(4px);
+  }
+
+  .gallery-caption::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 50% 20%, rgba(255,255,255,0.08), transparent 35%);
+    pointer-events: none;
+  }
+
+  .gallery-caption > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .gallery-tag {
+    display: inline-block;
+    background: var(--gold); color: #fff;
+    font-family: sans-serif; font-size: 10px;
+    letter-spacing: 1px; text-transform: uppercase;
+    padding: 2px 10px; border-radius: 20px; margin-bottom: 4px;
+  }
+
+  /* ── TIMELINE ── */
+  .tl-wrap { position: relative; padding-left: 2.6rem; }
+
+  .tl-wrap::before {
+    content: ''; position: absolute;
+    left: 14px; top: 14px; bottom: 14px; width: 2px;
+    background: linear-gradient(to bottom, var(--earth), var(--rust), var(--gold), var(--amber), var(--mustard-mid), var(--honey), var(--earth));
+    border-radius: 2px;
+  }
+
+  .tl-item { position: relative; padding: 0 0 0 1rem; }
+
+  .tl-dot {
+    position: absolute; left: -2rem; top: 1.1rem;
+    width: 14px; height: 14px; border-radius: 50%;
+    border: 2px solid var(--white); flex-shrink: 0;
+    box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.2);
+  }
+
+  .tl-card {
+    background: var(--white); border: 1.5px solid var(--border);
+    border-radius: 14px; padding: 1.2rem 1.4rem;
+    margin-bottom: 1rem; display: flex; gap: 1rem; align-items: flex-start;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .tl-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 2px 16px rgba(201, 162, 39, 0.12);
+  }
+
+  .tl-time-block { min-width: 60px; text-align: center; }
+  .tl-time { font-family: sans-serif; font-size: 13px; font-weight: 700; color: var(--mustard-dark); white-space: nowrap; }
+  .tl-ampm { font-family: sans-serif; font-size: 10px; color: var(--text-muted); }
+  .tl-div { width: 1px; background: var(--gold-pale); align-self: stretch; flex-shrink: 0; }
+  .tl-content { flex: 1; }
+  .tl-title { font-size: 1rem; font-weight: normal; color: var(--text-dark); margin-bottom: 0.2rem; }
+  .tl-desc { font-family: sans-serif; font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; }
+
+  .tl-tag {
+    display: inline-block; margin-top: 0.5rem;
+    font-family: sans-serif; font-size: 10px;
+    letter-spacing: 1px; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 20px;
+  }
+
+  .tag-church { background: var(--earth-pale); color: var(--earth); }
+  .tag-wild   { background: var(--sage-pale); color: var(--sage); }
+  .tag-food   { background: var(--amber-pale); color: var(--amber); }
+  .tag-travel { background: var(--gold-soft); color: var(--mustard-dark); }
+  .tag-mud    { background: var(--rust-pale); color: var(--rust); }
+  .tag-chill  { background: var(--gold-soft); color: var(--mustard-dark); }
+
+  /* ── ACTIVITIES ── */
+  .act-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .act-card {
+    background: var(--white); border: 1.5px solid var(--border);
+    border-radius: 14px; padding: 1.3rem;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .act-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--gold);
+    box-shadow: 0 4px 20px rgba(201, 162, 39, 0.14);
+  }
+
+  .act-icon {
+    display: block;
+    width: 36px; height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--honey));
+    border-radius: 2px;
+    margin-bottom: 0.85rem;
+  }
+
+  .act-title { font-size: 0.97rem; color: var(--text-dark); font-weight: normal; margin-bottom: 0.25rem; }
+  .act-desc { font-family: sans-serif; font-size: 0.81rem; color: var(--text-muted); line-height: 1.6; }
+
+  /* ── NOTICE ── */
+  .notice {
+    background: var(--gold-soft);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 12px 12px 0;
+    padding: 1.1rem 1.4rem; margin-top: 1.5rem;
+    font-family: sans-serif;
+  }
+
+  .notice .nt {
+    font-size: 11px; font-weight: 700; color: var(--mustard-mid);
+    margin-bottom: 0.3rem; letter-spacing: 1px; text-transform: uppercase;
+  }
+
+  .notice p { font-size: 0.86rem; color: var(--text-mid); line-height: 1.6; }
+
+  /* ── MAP ── */
+  .map-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 16px; overflow: hidden; }
+
+  .map-header {
+    padding: 1.2rem 1.5rem; background: var(--gold-soft);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem;
+  }
+
+  .map-header h3 { font-size: 0.97rem; font-weight: normal; color: var(--text-dark); }
+  .map-header p { font-family: sans-serif; font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
+
+  .map-btn {
+    background: var(--gold); color: #fff;
+    font-family: sans-serif; font-size: 12px;
+    padding: 7px 18px; border-radius: 20px;
+    text-decoration: none; white-space: nowrap;
+    transition: background 0.2s;
+  }
+
+  .map-btn:hover { background: var(--mustard-dark); }
+
+  .map-iframe { width: 100%; height: 280px; border: none; display: block; }
+
+  /* ── JOURNEY VISUALIZATION ── */
+  .journey-visual {
+    position: relative;
+    height: 320px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #87ceeb 0%, #c9e8f5 38%, #f5e6a8 72%, #e8d4a0 100%);
+  }
+
+  .journey-sun {
+    position: absolute; top: 28px; right: 12%;
+    width: 52px; height: 52px;
+    background: radial-gradient(circle, #ffe566 0%, #f5c842 55%, transparent 70%);
+    border-radius: 50%;
+    box-shadow: 0 0 40px rgba(255, 220, 100, 0.6);
+    animation: sun-glow 4s ease-in-out infinite;
+  }
+
+  @keyframes sun-glow {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.06); opacity: 0.92; }
+  }
+
+  .journey-cloud {
+    position: absolute;
+    background: rgba(255,255,255,0.85);
+    border-radius: 50px;
+    filter: blur(0.5px);
+    animation: cloud-drift linear infinite;
+  }
+
+  .journey-cloud::before,
+  .journey-cloud::after {
+    content: '';
+    position: absolute;
+    background: inherit;
+    border-radius: 50%;
+  }
+
+  .journey-cloud.c1 { width: 70px; height: 22px; top: 42px; left: -80px; animation-duration: 28s; }
+  .journey-cloud.c1::before { width: 32px; height: 32px; top: -14px; left: 12px; }
+  .journey-cloud.c1::after { width: 40px; height: 28px; top: -10px; left: 36px; }
+
+  .journey-cloud.c2 { width: 90px; height: 26px; top: 68px; left: -120px; animation-duration: 36s; animation-delay: -12s; opacity: 0.75; }
+  .journey-cloud.c2::before { width: 38px; height: 38px; top: -16px; left: 18px; }
+  .journey-cloud.c2::after { width: 48px; height: 32px; top: -12px; left: 44px; }
+
+  @keyframes cloud-drift {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(100vw + 200px)); }
+  }
+
+  .journey-hills {
+    position: absolute; bottom: 88px; left: 0; right: 0; height: 140px;
+    background:
+      radial-gradient(ellipse 120% 80% at 15% 100%, #5a8f4a 0%, transparent 55%),
+      radial-gradient(ellipse 100% 70% at 55% 100%, #6b9f52 0%, transparent 50%),
+      radial-gradient(ellipse 90% 65% at 88% 100%, #4d7a3e 0%, transparent 48%);
+    opacity: 0.9;
+  }
+
+  .journey-hills::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 40px;
+    background: linear-gradient(90deg, #7aab5c 0%, #8fbf6a 40%, #6d9d55 100%);
+    clip-path: polygon(0 100%, 0 40%, 8% 55%, 18% 35%, 28% 50%, 40% 30%, 52% 48%, 65% 25%, 78% 45%, 90% 28%, 100% 42%, 100% 100%);
+  }
+
+  .journey-tea {
+    position: absolute; bottom: 118px;
+    width: 100%; height: 28px;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent 0px, transparent 18px,
+      rgba(90, 130, 60, 0.35) 18px, rgba(90, 130, 60, 0.35) 22px
+    );
+    opacity: 0.5;
+  }
+
+  .journey-road-wrap {
+    position: absolute; bottom: 0; left: 0; right: 0; height: 110px;
+  }
+
+  .journey-road {
+    position: absolute; bottom: 28px; left: -2%; right: -2%;
+    height: 56px;
+    background: linear-gradient(180deg, #6b5a45 0%, #4a3f32 12%, #3d3428 50%, #352c22 100%);
+    transform: perspective(120px) rotateX(8deg);
+    border-radius: 4px;
+    box-shadow: 0 8px 20px rgba(42, 31, 8, 0.25);
+  }
+
+  .journey-road::before,
+  .journey-road::after {
+    content: '';
+    position: absolute; top: 0; bottom: 0; width: 8px;
+    background: #e8dcc8;
+    opacity: 0.35;
+  }
+
+  .journey-road::before { left: 6%; }
+  .journey-road::after { right: 6%; }
+
+  .road-dash {
+    position: absolute;
+    top: 50%; left: 0; right: 0; height: 4px;
+    margin-top: -2px;
+    background: repeating-linear-gradient(
+      90deg,
+      #f5e050 0px, #f5e050 24px,
+      transparent 24px, transparent 48px
+    );
+    animation: dash-scroll 0.8s linear infinite;
+  }
+
+  @keyframes dash-scroll {
+    from { background-position: 0 0; }
+    to { background-position: 48px 0; }
+  }
+
+  .journey-track {
+    position: absolute;
+    bottom: 52px;
+    left: 0; right: 0;
+    height: 64px;
+    pointer-events: none;
+  }
+
+  .journey-bus {
+    position: absolute;
+    bottom: 8px;
+    left: 2%;
+    width: 72px;
+    height: 48px;
+    animation: bus-drive 13s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
+    z-index: 20;
+    filter: drop-shadow(3px 6px 10px rgba(42, 31, 8, 0.32));
+  }
+
+  @keyframes bus-drive {
+    0%   { left: 2%;  transform: translateY(0) scaleX(1); }
+    20%  { left: 24%; transform: translateY(-3px) scaleX(1.02); }
+    40%  { left: 42%; transform: translateY(0) scaleX(1); }
+    60%  { left: 58%; transform: translateY(-2px) scaleX(1.01); }
+    80%  { left: 74%; transform: translateY(0) scaleX(1); }
+    100% { left: 86%; transform: translateY(-1px) scaleX(1); }
+  }
+
+  .bus-body {
+    position: absolute; bottom: 14px; left: 4px;
+    width: 58px; height: 30px;
+    background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold) 45%, var(--mustard-mid) 100%);
+    border-radius: 8px 10px 4px 4px;
+    border: 2px solid var(--mustard-dark);
+    transition: transform 0.3s ease;
+  }
+
+  .journey-bus:hover .bus-body {
+      transform: scale(1.1);
+  }
+
+  .bus-body::before {
+    content: '';
+    position: absolute; top: -8px; left: 8px; right: 8px; height: 10px;
+    background: linear-gradient(180deg, var(--honey), var(--amber));
+    border-radius: 6px 6px 0 0;
+    border: 2px solid var(--mustard-dark);
+    border-bottom: none;
+  }
+
+  .bus-window {
+    position: absolute; top: 6px;
+    width: 11px; height: 12px;
+    background: linear-gradient(135deg, #b8e4f5 0%, #7ec8e3 100%);
+    border-radius: 2px;
+    border: 1px solid var(--mustard-dark);
+  }
+
+  .bus-window:nth-child(1) { left: 8px; }
+  .bus-window:nth-child(2) { left: 22px; }
+  .bus-window:nth-child(3) { left: 36px; }
+
+  .bus-stripe {
+    position: absolute; bottom: 4px; left: 0; right: 0; height: 5px;
+    background: var(--mustard-dark);
+    border-radius: 0 0 4px 4px;
+  }
+
+  .bus-label {
+    position: absolute; bottom: 7px; left: 50%;
+    transform: translateX(-50%);
+    font-family: sans-serif; font-size: 6px; font-weight: 700;
+    letter-spacing: 0.5px; color: var(--gold-pale);
+    text-transform: uppercase;
+  }
+
+  .bus-wheel {
+    position: absolute; bottom: 6px;
+    width: 14px; height: 14px;
+    background: #2a1f08;
+    border-radius: 50%;
+    border: 3px solid #5c4a1f;
+    animation: wheel-spin 0.4s linear infinite;
+  }
+
+  .bus-wheel::after {
+    content: '';
+    position: absolute; inset: 3px;
+    border: 2px dashed rgba(255,255,255,0.25);
+    border-radius: 50%;
+  }
+
+  .bus-wheel.w1 { left: 10px; }
+  .bus-wheel.w2 { left: 44px; }
+
+  @keyframes wheel-spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .bus-exhaust {
+    position: absolute; bottom: 22px; left: -6px;
+    width: 8px; height: 8px;
+    background: rgba(200,200,200,0.4);
+    border-radius: 50%;
+    animation: exhaust-puff 1.2s ease-out infinite;
+  }
+
+  @keyframes exhaust-puff {
+    0% { opacity: 0.5; transform: translateX(0) scale(0.6); }
+    100% { opacity: 0; transform: translateX(-14px) scale(1.4); }
+  }
+
+  .journey-pin {
+    position: absolute;
+    bottom: 98px;
+    display: flex; flex-direction: column; align-items: center;
+    z-index: 15;
+    font-family: sans-serif;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+
+  .journey-pin .pin-dot {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 8px rgba(42,31,8,0.25);
+  }
+
+  .journey-pin .pin-label {
+    margin-top: 4px;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--text-dark);
+    background: rgba(255,255,255,0.92);
+    padding: 3px 8px;
+    border-radius: 12px;
+    border: 1px solid var(--border-strong);
+    white-space: nowrap;
+  }
+
+  .pin-nairobi { left: 4%; }
+  .pin-nairobi .pin-dot { background: var(--earth); }
+
+  .pin-falls-end { right: 3%; left: auto; }
+  .pin-falls-end .pin-dot { background: #4a9fd4; }
+
+  .signboard {
+    position: absolute;
+    bottom: 108px;
+    z-index: 12;
+    display: flex; flex-direction: column; align-items: center;
+    animation: sign-sway 5s ease-in-out infinite;
+  }
+
+  .sign-kerugoya { left: 42%; animation-delay: -1.5s; }
+  .sign-falls { left: 72%; animation-delay: -3s; }
+
+  @keyframes sign-sway {
+    0%, 100% { transform: rotate(-1.5deg); }
+    50% { transform: rotate(1.5deg); }
+  }
+
+  .sign-post {
+    width: 6px; height: 36px;
+    background: linear-gradient(90deg, #5c4a1f, #8a7344, #5c4a1f);
+    border-radius: 2px;
+    box-shadow: 2px 2px 4px rgba(42,31,8,0.2);
+  }
+
+  .sign-face {
+    position: relative;
+    margin-bottom: -2px;
+    padding: 8px 14px 10px;
+    font-family: sans-serif;
+    font-size: 11px; font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    border: 3px solid;
+    box-shadow: 0 4px 12px rgba(42,31,8,0.2);
+    white-space: nowrap;
+  }
+
+  .sign-face::after {
+    content: '';
+    position: absolute;
+    bottom: -8px; left: 50%;
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-top-width: 8px;
+  }
+
+  .sign-kerugoya .sign-face {
+    background: linear-gradient(180deg, #1a5f2a 0%, #0d4020 100%);
+    color: #fff;
+    border-color: #fff;
+    box-shadow: 0 0 0 2px #1a5f2a, 0 6px 16px rgba(13,64,32,0.35);
+  }
+
+  .sign-kerugoya .sign-face::after { border-top-color: #0d4020; }
+
+  .sign-kerugoya .sign-sub {
+    display: block;
+    font-size: 7px; font-weight: 600;
+    letter-spacing: 0.5px;
+    opacity: 0.85;
+    margin-top: 2px;
+    text-transform: none;
+  }
+
+  .sign-falls .sign-face {
+    background: linear-gradient(180deg, #2a6fa8 0%, #1a4d78 100%);
+    color: #fff;
+    border-color: #b8e4f5;
+    box-shadow: 0 0 0 2px #1a4d78, 0 6px 16px rgba(26,77,120,0.35);
+  }
+
+  .sign-falls .sign-face::after { border-top-color: #1a4d78; }
+
+  .sign-falls .sign-sub {
+    display: block;
+    font-size: 7px; font-weight: 600;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+    margin-top: 2px;
+    text-transform: none;
+  }
+
+  .journey-water {
+    position: absolute;
+    right: 2%; bottom: 125px;
+    width: 48px; height: 32px;
+    opacity: 0.85;
+    z-index: 5;
+  }
+
+  .journey-water svg { width: 100%; height: 100%; }
+
+  .journey-legend {
+    position: absolute;
+    bottom: 8px; left: 50%;
+    transform: translateX(-50%);
+    display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+    font-family: sans-serif; font-size: 9px;
+    letter-spacing: 0.5px; text-transform: uppercase;
+    color: var(--text-mid);
+    background: rgba(255,255,255,0.75);
+    padding: 4px 12px;
+    border-radius: 20px;
+    z-index: 25;
+    backdrop-filter: blur(4px);
+  }
+
+  .journey-legend span { display: flex; align-items: center; gap: 4px; }
+  .journey-legend .leg-dot { width: 6px; height: 6px; border-radius: 50%; }
+
+  .map-real-label {
+    font-family: sans-serif; font-size: 10px;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 0.75rem 1.5rem 0;
+    margin: 0;
+  }
+
+  .map-stops {
+    display: flex; align-items: center; gap: 0.5rem;
+    padding: 1rem 1.5rem; flex-wrap: wrap;
+    border-top: 1px solid var(--border);
+    font-family: sans-serif; font-size: 0.82rem; color: var(--text-muted);
+  }
+
+  .sdot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; margin-right: 4px; }
+
+  /* ── PACK ── */
+  .pack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1rem; }
+
+  .pack-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 12px; padding: 1.1rem; }
+
+  .pack-card h4 {
+    font-family: sans-serif; font-size: 10px;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--mustard-mid); font-weight: 700; margin-bottom: 0.7rem;
+  }
+
+  .pack-card ul { list-style: none; font-family: sans-serif; font-size: 0.83rem; color: var(--text-muted); }
+  .pack-card li { padding: 3px 0 3px 1.1rem; position: relative; }
+  .pack-card li::before { content: '✓'; position: absolute; left: 0; color: var(--gold); font-size: 11px; }
+
+  .must-banner {
+    background: linear-gradient(135deg, var(--mustard-dark) 0%, var(--mustard-mid) 100%);
+    color: rgba(255,255,255,0.95);
+    border-radius: 14px; padding: 1.4rem 1.8rem;
+    margin-bottom: 1.8rem;
+    font-family: sans-serif; font-size: 0.92rem; line-height: 1.8;
+    display: flex; gap: 1rem; align-items: flex-start; flex-wrap: wrap;
+  }
+
+  .must-banner .mi {
+    flex-shrink: 0;
+    font-family: sans-serif; font-size: 10px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.35);
+    padding: 6px 12px; border-radius: 6px;
+    color: var(--gold-pale);
+  }
+
+  .must-banner strong { color: var(--gold-light); }
+
+  hr { border: none; border-top: 1px solid var(--gold-pale); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: linear-gradient(135deg, var(--mustard-dark) 0%, var(--mustard-mid) 100%);
+    color: rgba(255,255,255,0.75);
+    text-align: center; padding: 3rem 1rem;
+    font-family: sans-serif; font-size: 0.85rem;
+  }
+
+  footer .ft { font-family: 'Georgia', serif; font-size: 1.2rem; color: var(--gold-light); font-weight: normal; margin-bottom: 0.4rem; }
+  footer .fv { font-style: italic; color: rgba(255,255,255,0.55); font-family: 'Georgia', serif; margin-top: 1rem; font-size: 0.82rem; }
+
+  @media (max-width: 560px) {
+    .gallery { grid-template-columns: 1fr; }
+    .tl-card { flex-direction: column; gap: 0.5rem; }
+    .tl-div { display: none; }
+    nav a { padding: 0.8rem 0.9rem; }
+    .journey-visual { height: 280px; }
+    .sign-kerugoya { left: 36%; }
+    .sign-falls { left: 66%; }
+    .sign-face { font-size: 9px; padding: 6px 10px 8px; }
+    .journey-bus { width: 58px; }
+    .bus-body { width: 46px; height: 26px; }
+    .bus-wheel.w2 { left: 34px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .journey-bus, .road-dash, .journey-cloud, .journey-sun,
+    .bus-wheel, .bus-exhaust, .signboard {
+      animation: none;
+    }
+    .journey-bus { left: 40%; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Thanksgiving Day Out · 2026</div>
+  <h1>One Day.<br><em>Full Hearts.</em> Great Friends.</h1>
+  <p class="hero-sub">House of Destiny Church · Kerugoya &nbsp;→&nbsp; Njine Kabia Falls</p>
+  <div class="hero-pills">
+    <span class="hero-pill"><span class="hero-pill-label">Date</span> Saturday, 28th June 2026</span>
+    <span class="hero-pill"><span class="hero-pill-label">Depart</span> 6:30 AM</span>
+    <span class="hero-pill"><span class="hero-pill-label">Return</span> 8:00 PM</span>
+    <span class="hero-pill"><span class="hero-pill-label">Where</span> Kerugoya, Kirinyaga</span>
+  </div>
+</div>
+
+<!-- BIBLE VERSE -->
+<div class="verse-banner">
+  <div class="verse-mark" aria-hidden="true"></div>
+  <p class="verse-text">"For where two or three gather in my name, there am I with them."</p>
+  <span class="verse-ref">Matthew 18:20</span>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#gallery">Gallery</a>
+  <a href="#schedule">Schedule</a>
+  <a href="#activities">Activities</a>
+  <a href="#directions">Directions</a>
+  <a href="#pack">What to Bring</a>
+</nav>
+
+<!-- GALLERY -->
+<section id="gallery" style="background:var(--gold-cream)">
+  <div class="container">
+    <div class="section-label">Where We're Headed</div>
+    <h2 class="section-title">A Glimpse of the Adventure</h2>
+    <p class="section-intro">Njine Kabia Falls — hidden waterfalls, jungle trails, mud fun and good vibes just outside Kerugoya.</p>
+
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="https://www.hikingadventures.net/wp-content/uploads/2024/06/Njine-Kabia-Falls-1-1536x1152.jpg"
+             alt="Njine Kabia Falls waterfall trail"
+             onerror="this.style.background='#fff8e1'; this.style.display='flex'; this.alt='Njine Kabia Falls'">
+        <div class="gallery-caption">
+          <span class="gallery-tag">Hike</span><br>
+          Njine Kabia Falls · Kerugoya
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.pexels.com/photos/207896/pexels-photo-207896.jpeg"
+             alt="Friends gathering and celebrating together"
+             onerror="this.style.background='#fff8e1'">
+        <div class="gallery-caption">
+          <span class="gallery-tag">Fellowship</span><br>
+          Friends. Food. Gratitude.
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg"
+             alt="People silhouette during sunset"
+             onerror="this.style.background='#fff8e1'">
+        <div class="gallery-caption">
+          <span class="gallery-tag">Sunset</span><br>
+          Golden hour community moment.
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.hikingadventures.net/wp-content/uploads/2024/06/Njine-Kabia-Falls-4-1024x768.jpg"
+             alt="Hidden waterfall at Njine Kabia Falls"
+             onerror="this.style.background='#fff8e1'">
+        <div class="gallery-caption">
+          <span class="gallery-tag">Waterfall</span><br>
+          Njine Kabia Falls in full view.
+        </div>
+      </div>
+    </div>
+
+    <p style="font-family:sans-serif; font-size:0.82rem; color:var(--text-muted); text-align:center; margin-top:0.5rem;">
+      June is peak season for outdoor activities in Kirinyaga — expect lush greenery and refreshing falls.
+    </p>
+  </div>
+</section>
+
+<hr>
+
+<!-- SCHEDULE -->
+<section id="schedule" style="background:var(--white)">
+  <div class="container">
+    <div class="section-label">Saturday 28th June</div>
+    <h2 class="section-title">The Day's Schedule</h2>
+    <p class="section-intro">From early morning worship to a muddy afternoon feast — here's everything, hour by hour.</p>
+
+    <div class="tl-wrap">
+
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--earth)"></div>
+        <div class="tl-card">
+          <div class="tl-time-block"><div class="tl-time">6:30</div><div class="tl-ampm">AM</div></div>
+          <div class="tl-div"></div>
+          <div class="tl-content">
+            <div class="tl-title">Departure from Nairobi</div>
+            <p class="tl-desc">Latest departure — meet-up point to be communicated by the team. Don't be that person who makes everyone wait!</p>
+            <span class="tl-tag tag-travel">Travel · ~2 hrs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--mustard-mid)"></div>
+        <div class="tl-card">
+          <div class="tl-time-block"><div class="tl-time">8:30</div><div class="tl-ampm">AM</div></div>
+          <div class="tl-div"></div>
+          <div class="tl-content">
+            <div class="tl-title">Thanksgiving Service at HOD Church</div>
+            <p class="tl-desc">The heart of the day — a full thanksgiving service at House of Destiny Church, Kerugoya. Worship, gratitude, community and the very reason we're all here.</p>
+            <span class="tl-tag tag-church">Worship · 8:30 – 10:30 AM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--gold)"></div>
+        <div class="tl-card">
+          <div class="tl-time-block"><div class="tl-time">11:00</div><div class="tl-ampm">AM</div></div>
+          <div class="tl-div"></div>
+          <div class="tl-content">
+            <div class="tl-title">Head to Njine Kabia Falls</div>
+            <p class="tl-desc">After church we head straight to Njine Kabia — a beautiful hidden gem just outside Kerugoya town. Change into your extra clothes. Things <em>will</em> get messy.</p>
+            <span class="tl-tag tag-wild">Adventure Zone</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--rust)"></div>
+        <div class="tl-card">
+          <div class="tl-time-block"><div class="tl-time">11:30</div><div class="tl-ampm">AM</div></div>
+          <div class="tl-div"></div>
+          <div class="tl-content">
+            <div class="tl-title">Activities at Njine Kabia</div>
+            <p class="tl-desc">Mud fun, zip lining, bootcamp, team building, games and pure bonding energy. Good vibes all through. This is why you were told to start working out <em>mapema mapema.</em></p>
+            <span class="tl-tag tag-mud">Mud · Zip Line · Bootcamp · Games</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--amber)"></div>
+        <div class="tl-card">
+          <div class="tl-time-block"><div class="tl-time">2:00</div><div class="tl-ampm">PM</div></div>
+          <div class="tl-div"></div>
+          <div class="tl-content">
+            <div class="tl-title">Goat Feast & Brunch Picnic</div>
+            <p class="tl-desc">The one you've been waiting for. A full goat eating session + brunch picnic together by the falls. Eat, laugh, be grateful. Come with a big appetite.</p>
+            <span class="tl-tag tag-food">The Big Feast</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--honey)"></div>
+        <div class="tl-card">
+          <div class="tl-time-block"><div class="tl-time">4:30</div><div class="tl-ampm">PM</div></div>
+          <div class="tl-div"></div>
+          <div class="tl-content">
+            <div class="tl-title">Free Time & Wind Down</div>
+            <p class="tl-desc">Chill by the waterfall, take photos, play games, nap on the grass — whatever your heart needs after all those bootcamp activities.</p>
+            <span class="tl-tag tag-chill">Relax & Bond</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--earth)"></div>
+        <div class="tl-card">
+          <div class="tl-time-block"><div class="tl-time">8:00</div><div class="tl-ampm">PM</div></div>
+          <div class="tl-div"></div>
+          <div class="tl-content">
+            <div class="tl-title">Departure Back to Nairobi</div>
+            <p class="tl-desc">All good things must end. We head back to Nairobi as a group — tired, fed, muddy and deeply grateful.</p>
+            <span class="tl-tag tag-travel">Return Journey</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- ACTIVITIES -->
+<section id="activities" style="background:var(--gold-cream)">
+  <div class="container">
+    <div class="section-label">At Njine Kabia Falls</div>
+    <h2 class="section-title">What We'll Be Doing</h2>
+    <p class="section-intro">A packed afternoon of adventure, mud and good vibes. Start stretching now.</p>
+
+    <div class="act-grid">
+      <div class="act-card">
+        <span class="act-icon" aria-hidden="true"></span>
+        <div class="act-title">Mud Fun</div>
+        <p class="act-desc">The signature Njine Kabia experience. Slip, slide and get absolutely filthy. Extra clothes are not optional — this is a warning.</p>
+      </div>
+      <div class="act-card">
+        <span class="act-icon" aria-hidden="true"></span>
+        <div class="act-title">Zip Lining</div>
+        <p class="act-desc">Fly over the falls and forest canopy on the zip line. Heart-pumping and unforgettable — scream as loud as you want.</p>
+      </div>
+      <div class="act-card">
+        <span class="act-icon" aria-hidden="true"></span>
+        <div class="act-title">Bootcamp Activities</div>
+        <p class="act-desc">Physical challenges and obstacle courses. This is exactly why the organiser said <em>start working out mapema mapema</em>.</p>
+      </div>
+      <div class="act-card">
+        <span class="act-icon" aria-hidden="true"></span>
+        <div class="act-title">Team Building</div>
+        <p class="act-desc">Group challenges designed to bond the squad. You'll leave closer than you arrived. Promise.</p>
+      </div>
+      <div class="act-card">
+        <span class="act-icon" aria-hidden="true"></span>
+        <div class="act-title">Games & Bonding</div>
+        <p class="act-desc">Classic group games, fun competitions and lots of laughter. Good vibes all through.</p>
+      </div>
+      <div class="act-card">
+        <span class="act-icon" aria-hidden="true"></span>
+        <div class="act-title">Goat Feast & Picnic</div>
+        <p class="act-desc">A full goat eating session + brunch picnic by the falls. Come hungry. Leave full, muddy and grateful.</p>
+      </div>
+    </div>
+
+    <div class="notice">
+      <div class="nt">About Njine Kabia Falls</div>
+      <p>A stunning hidden gem in Kiabarikiri village, just outside Kerugoya town. Three cascading waterfalls, jungle trails and group activity grounds. About a 2-hour drive from Nairobi.</p>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- DIRECTIONS -->
+<section id="directions" style="background:var(--white)">
+  <div class="container">
+    <div class="section-label">Getting There</div>
+    <h2 class="section-title">Nairobi → Kerugoya → The Falls</h2>
+    <p class="section-intro">We travel together as a group. Meet-up point will be confirmed by the team — latest departure 6:30 AM sharp.</p>
+
+    <div class="map-card">
+      <div class="map-header">
+        <div>
+          <h3>Our route — church first, adventure after</h3>
+          <p>Via Thika Superhighway · A2 · Muranga Road &nbsp;·&nbsp; ~2 hrs to Kerugoya</p>
+        </div>
+      </div>
+
+      <div class="journey-visual" role="img" aria-label="Animated route: bus travels from Nairobi past Kerugoya sign to Njine Kabia Falls">
+        <div class="journey-sun" aria-hidden="true"></div>
+        <div class="journey-cloud c1" aria-hidden="true"></div>
+        <div class="journey-cloud c2" aria-hidden="true"></div>
+        <div class="journey-hills" aria-hidden="true"></div>
+        <div class="journey-tea" aria-hidden="true"></div>
+        <div class="journey-pin pin-nairobi">
+          <span class="pin-dot"></span>
+          <span class="pin-label">Nairobi</span>
+        </div>
+        <div class="signboard sign-kerugoya" aria-hidden="true">
+          <div class="sign-face">Kerugoya<span class="sign-sub">HOD Church · 8:30 AM</span></div>
+          <div class="sign-post"></div>
+        </div>
+        <div class="signboard sign-falls" aria-hidden="true">
+          <div class="sign-face">The Falls<span class="sign-sub">Njine Kabia</span></div>
+          <div class="sign-post"></div>
+        </div>
+        <div class="journey-pin pin-falls-end">
+          <span class="pin-dot"></span>
+          <span class="pin-label">Adventure</span>
+        </div>
+        <div class="journey-water" aria-hidden="true">
+          <svg viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 20 Q12 14 20 20 T36 20 T48 20 L48 32 L0 32 Z" fill="#5eb8e8" opacity="0.7"/>
+            <path d="M0 24 Q8 18 16 24 T32 24 T48 24" stroke="#3a8fc4" stroke-width="2" fill="none" opacity="0.6">
+              <animate attributeName="d" dur="2s" repeatCount="indefinite" values="M0 24 Q8 18 16 24 T32 24 T48 24;M0 24 Q8 22 16 24 T32 22 T48 24;M0 24 Q8 18 16 24 T32 24 T48 24"/>
+            </path>
+          </svg>
+        </div>
+        <div class="journey-road-wrap" aria-hidden="true">
+          <div class="journey-road"><div class="road-dash"></div></div>
+        </div>
+        <div class="journey-track" aria-hidden="true">
+          <div class="journey-bus">
+            <span class="bus-exhaust"></span>
+            <div class="bus-body">
+              <span class="bus-window"></span>
+              <span class="bus-window"></span>
+              <span class="bus-window"></span>
+              <span class="bus-stripe"></span>
+              <span class="bus-label">Squad</span>
+            </div>
+            <span class="bus-wheel w1"></span>
+            <span class="bus-wheel w2"></span>
+          </div>
+        </div>
+        <div class="journey-legend" aria-hidden="true">
+          <span><span class="leg-dot" style="background:var(--earth)"></span> Depart</span>
+          <span><span class="leg-dot" style="background:#1a5f2a"></span> Church</span>
+          <span><span class="leg-dot" style="background:#2a6fa8"></span> Falls</span>
+        </div>
+      </div>
+      <p class="map-real-label">Interactive map</p>
+      <iframe class="map-iframe"
+        src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d255282.012354!2d36.75!3d-0.75!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x182f1172d84d49a7%3A0xf7cf0254b297924c!2sNairobi!3m2!1d-1.2920659!2d36.8219462!4m5!1s0x182877a5658e4c05%3A0x867085c7a40c6753!2sKerugoya!3m2!1d-0.4998!2d37.2759!5e0!3m2!1sen!2ske!4v1715000000000"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+
+      <div class="map-stops">
+        <span><span class="sdot" style="background:var(--earth)"></span>Nairobi (Pickup TBC)</span>
+        <span style="opacity:0.3">→</span>
+        <span><span class="sdot" style="background:var(--mustard-mid)"></span>Thika Superhighway</span>
+        <span style="opacity:0.3">→</span>
+        <span><span class="sdot" style="background:var(--gold)"></span>Sagana / Muranga</span>
+        <span style="opacity:0.3">→</span>
+        <span><span class="sdot" style="background:var(--honey)"></span>HOD Church, Kerugoya</span>
+        <span style="opacity:0.3">→</span>
+        <span><span class="sdot" style="background:var(--rust)"></span>Njine Kabia Falls</span>
+      </div>
+    </div>
+
+    <div style="margin-top:1.2rem; padding:1.1rem 1.4rem; background:var(--gold-soft); border-radius:12px; border-left:3px solid var(--gold); font-family:sans-serif; font-size:0.86rem; color:var(--text-mid); line-height:1.7;">
+      <strong>Travel note:</strong> Depart by <strong>6:30 AM latest</strong> to arrive in time for the 8:30 AM service. Watch out for early morning traffic on Thika Road. The exact meet-up point will be shared by the team — stay in the group chat!
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- PACK -->
+<section id="pack" style="background:var(--gold-cream)">
+  <div class="container">
+    <div class="section-label">Come Prepared</div>
+    <h2 class="section-title">What to Bring</h2>
+
+    <div class="must-banner">
+      <span class="mi">Essential</span>
+      <div>
+        <strong>Must bring: extra clothes!</strong> — Things <em>will</em> get messy at Njine Kabia. Pack a full change of clothes you don't mind getting muddy. Also: <strong>start working out mapema mapema</strong>
+      </div>
+    </div>
+
+    <div class="pack-grid">
+      <div class="pack-card">
+        <h4>Clothing</h4>
+        <ul>
+          <li>Extra set of clothes (MUST)</li>
+          <li>Old clothes for mud activities</li>
+          <li>Smart outfit for church service</li>
+          <li>Comfortable shoes for activities</li>
+          <li>Light jacket (cool mornings)</li>
+        </ul>
+      </div>
+      <div class="pack-card">
+        <h4>Day Essentials</h4>
+        <ul>
+          <li>Small backpack</li>
+          <li>Water bottle (2 L)</li>
+          <li>Snacks for the journey</li>
+          <li>Phone + power bank</li>
+          <li>Cash / Mpesa</li>
+        </ul>
+      </div>
+      <div class="pack-card">
+        <h4>Health & Care</h4>
+        <ul>
+          <li>Personal medication</li>
+          <li>Sunscreen</li>
+          <li>Insect repellent</li>
+          <li>Hand sanitizer</li>
+          <li>Small towel</li>
+        </ul>
+      </div>
+      <div class="pack-card">
+        <h4>Good Vibes Pack</h4>
+        <ul>
+          <li>A grateful heart</li>
+          <li>Your best energy</li>
+          <li>Big appetite for goat</li>
+          <li>Camera for the memories</li>
+          <li>Bible / devotional</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft">Thanksgiving Day Out · 28th June 2026</div>
+  <p style="margin-top:0.3rem">House of Destiny Church & Njine Kabia Falls · Kerugoya, Kirinyaga</p>
+  <p class="fv">"For where two or three gather in my name, there am I with them." — Matthew 18:20</p>
+  <p style="margin-top:1rem; opacity:0.35; font-size:0.75rem">The trip is on. Good vibes all through.</p>
+</footer>
+
+</body>
+</html>
