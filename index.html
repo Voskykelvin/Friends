@@ -834,8 +834,56 @@
   footer .ft { font-family: 'Georgia', serif; font-size: 1.2rem; color: var(--gold-light); font-weight: normal; margin-bottom: 0.4rem; }
   footer .fv { font-style: italic; color: rgba(255,255,255,0.55); font-family: 'Georgia', serif; margin-top: 1rem; font-size: 0.82rem; }
 
+  @media (max-width: 900px) {
+    .hero { padding: 6.2rem 1.5rem 5rem; }
+    .hero-sub { font-size: 0.95rem; }
+    .hero-pill { padding: 7px 14px; font-size: 12px; }
+    .hero-pills { gap: 0.5rem; }
+    .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .act-grid { grid-template-columns: repeat(2, minmax(200px, 1fr)); }
+    .pack-grid { grid-template-columns: repeat(2, minmax(190px, 1fr)); }
+    .map-stops { font-size: 0.8rem; }
+    .notice, .must-banner { padding: 1.2rem 1.3rem; }
+    .tl-card { padding: 1rem 1rem; }
+    .tl-time-block { min-width: 50px; }
+    .journey-visual { height: 300px; }
+    nav a { padding: 0.9rem 1rem; }
+  }
+
+  @media (max-width: 720px) {
+    .hero { padding: 5.4rem 1rem 4.2rem; }
+    .hero h1 { font-size: clamp(2rem, 9vw, 3.2rem); }
+    .hero-sub { font-size: 0.95rem; }
+    .hero-pills { flex-direction: column; align-items: stretch; }
+    .hero-pill { width: 100%; justify-content: center; }
+    .gallery { grid-template-columns: 1fr; }
+    .act-grid { grid-template-columns: 1fr; }
+    .pack-grid { grid-template-columns: 1fr; }
+    .map-card { padding: 1rem; }
+    .map-header { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+    .map-iframe { height: 240px; }
+    .map-stops { gap: 0.4rem; font-size: 0.78rem; }
+    .tl-card { flex-direction: column; gap: 0.75rem; }
+    .tl-div { display: none; }
+    .tl-time-block { min-width: 48px; }
+    .tl-time { font-size: 12px; }
+    .tl-ampm { font-size: 9px; }
+    .journey-visual { height: 260px; }
+    .journey-bus { width: 58px; }
+    .bus-body { width: 46px; height: 26px; }
+    .bus-wheel.w2 { left: 34px; }
+    .sign-kerugoya { left: 34%; }
+    .sign-falls { left: 64%; }
+    .sign-face { font-size: 9px; padding: 6px 10px 8px; }
+    nav a { padding: 0.8rem 0.9rem; font-size: 11px; }
+    section { padding: 3rem 0.9rem; }
+    footer { padding: 2.5rem 0.9rem; }
+  }
+
   @media (max-width: 560px) {
     .gallery { grid-template-columns: 1fr; }
+    .act-grid { grid-template-columns: 1fr; }
+    .pack-grid { grid-template-columns: 1fr; }
     .tl-card { flex-direction: column; gap: 0.5rem; }
     .tl-div { display: none; }
     nav a { padding: 0.8rem 0.9rem; }
@@ -846,6 +894,12 @@
     .journey-bus { width: 58px; }
     .bus-body { width: 46px; height: 26px; }
     .bus-wheel.w2 { left: 34px; }
+    .hero { padding: 5rem 0.8rem 4rem; }
+    .hero-pill { padding: 8px 16px; }
+    .section-title { font-size: 1.5rem; }
+    .section-intro { font-size: 0.92rem; }
+    .map-iframe { height: 220px; }
+    .container { padding: 0 0.5rem; }
   }
 
   @media (prefers-reduced-motion: reduce) {
